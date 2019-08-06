@@ -1,0 +1,177 @@
+html {box-sizing:border-box;}
+*, *::before, *::after {box-sizing:inherit;}
+
+body {
+    background-image: linear-gradient(#F8B195, #F67280, #C06C84, #6C5B7B, #355C7D);
+    background-attachment: fixed;
+    background-repeat: no-repeat; 
+}
+
+.maincontainer {
+    width: 1000px;
+    height: 700px;
+    text-align: center;
+    margin: auto;
+    padding-top: 100px;
+}
+
+.invitee {
+    height: 400px;
+    width: 400px;
+    background: #6C5B7B;
+    margin-left: 300px;
+    border: 6px solid white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px black;
+    color: white;
+    font-size: 20px;
+    font-family: "Roboto" ,sans-serif;
+}
+
+.inviteesmall {
+    height: 300px;
+    width: 300px;
+    background: #6C5B7B;
+    border: 6px solid white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px black;
+    color: white;
+    font-size: 15px;
+    font-family: "Roboto" ,sans-serif;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    padding-left: 50px;
+}
+
+.button {
+    height: 40px;
+    width: 100px;
+    margin: 20px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-family: "Roboto" ,sans-serif;
+    background-color: #F8B195;
+    border: 2px solid white;
+    box-shadow: 0px 0px 5px black;
+    border-radius: 20px;
+    color: #355C7D;
+    outline: 0;
+
+}
+
+.button1 {
+    height: 40px;
+    width: 150px;
+    margin: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-family: "Roboto" ,sans-serif;
+    background-color: #F8B195;
+    border: 2px solid white;
+    box-shadow: 0px 0px 5px black;
+    color: #355C7D;
+    outline: 0;
+}
+
+.links {
+    height: 50px;
+    width: 120px;
+    color: #355C7D;
+    border: 2px solid white;
+    box-shadow: 0px 0px 5px black;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-family: "Roboto" ,sans-serif;
+    background-color: #F8B195;
+    text-decoration: none;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.links1 {
+    height: 50px;
+    width: 120px;
+    color: #355C7D;
+    border: 2px solid white;
+    box-shadow: 0px 0px 5px black;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: "Roboto" ,sans-serif;
+    background-color: #F8B195;
+    text-decoration: none;
+    margin: 20px;
+    padding: 13px 23px;
+    border-radius: 20px;
+}
+
+.links2 {
+    height: 50px;
+    width: 120px;
+    color: #355C7D;
+    border: 2px solid white;
+    box-shadow: 0px 0px 5px black;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: "Roboto" ,sans-serif;
+    background-color: #F8B195;
+    text-decoration: none;
+    margin: 20px;
+    padding:15px 8px;
+    border-radius: 20px;
+}
+
+.links5 {
+    height: 50px;
+    width: 150px;
+    color: #355C7D;
+    border: 2px solid white;
+    box-shadow: 0px 0px 5px black;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-family: "Roboto" ,sans-serif;
+    background-color: #F8B195;
+    text-decoration: none;
+    margin: 20px;
+    padding-top: 15px;
+
+}
+
+.linkbutton {
+    margin-left: 310px; 
+    display: flex;
+    
+
+
+
+}
+
+link {
+    text-decoration: none;
+}
+
+img {
+    border-radius: 70px;
+    border: 3px solid white;
+    box-shadow: 0px 0px 10px black;
+}
+
+.container {
+    display: flex;
+    width: 1000px;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.back {
+    font-size: 30px;
+    color: white;
+    font-family: "Roboto" ,sans-serif;
+    text-transform: uppercase;
+    margin: 30px;
+
+}
