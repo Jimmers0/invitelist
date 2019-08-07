@@ -1,5 +1,5 @@
 const initialState = {
-  start: '',
+  user: '',
   going: [],
   notgoing: []
 }
@@ -7,11 +7,16 @@ const initialState = {
 export default function(state = initialState, action) {
   switch (action.type) {
     case 'START':
-      return {...state, start: action.payload}
+      return {...state, user: action.payload}
+    case 'GET_GOING':
+        return {...state, going: action.payload} 
+    case 'GET_NOT_GOING':
+        return {...state, notgoing: action.payload}   
     case 'ADD_NOTGOING':
-          return {...state, notgoing:[ action.payload, ...state.notgoing]} 
+          return {...state, notgoing:[ ...state.notgoing, action.payload]} 
     case 'ADD_GOING':
-        return {...state, going:[ action.payload, ...state.going]}
+        return {...state, going:[ ...state.going, action.payload]}
+
     default:
       return state
   }

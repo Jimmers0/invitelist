@@ -1,64 +1,38 @@
 const router = require('express').Router()
 
-const bodyParser = require('body-parser')
 
 
-const users = []
-let id = 1
 
-router.use(bodyParser.urlencoded({extended: false}))
-router.use(bodyParser.json())
+const users = {
+  going : [],
+  notgoing : []
+}
 
-router.post("/user", (req ,res ,next) => {
-
-  const user = req.body.user
-
-  users.id = id
-  user.fname = invitee.name.first
-  user.lname = invitee.name.last
-  user.phone = invitee.userphone
-  user.email = invitee.useremail
-  user.going = 'no'
-
-  id++
-
-  users.push(user)
+router.get('/going', (req, res, next) => {
+  res.json(users.going)
 })
 
-router.get("/user/:id", (req, res, next) => {
-  const id = req.params.id
-
-  const user = users.find(user => Number(id) === user.id)
-
-  res.json({
-    user:user 
-  })
+router.get('/notgoing', (req, res, next) => {
+  res.json(users.notgoing)
 })
 
-router.post("/user", (req ,res ,next) => {
-
-  const user = req.body.user
-
-  users.id = id
-  user.fname = invitee.name.first
-  user.lname = invitee.name.last
-  user.phone = invitee.userphone
-  user.email = invitee.useremail
-  user.going = 'yes'
-
-  id++
-
-  users.push(user)
+router.post("/notgoing", (req ,res ,next) => {
+users.notgoing.push(req.body)
+console.log(users)
+res.json({
+  message: 'user added',
+  user: req.body
 }) 
-
-router.get("/user/:id", (req, res, next) => {
-  const id = req.params.id
-
-  const user = users.find(user => Number(id) === user.id)
-
-  res.json({
-    user:user 
-  })
 })
+
+router.post("/going", (req ,res ,next) => {
+  users.going.push(req.body)
+  console.log(users)
+  res.json({
+    message: 'user added',
+    user: req.body
+  }) 
+  })
+
 
 module.exports = router

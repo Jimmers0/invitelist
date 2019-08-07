@@ -4,10 +4,24 @@ import { addNotGoing } from '../actions/example.actions';
 import { addGoing } from '../actions/example.actions';
 import { Link } from 'react-router-dom'
 import Button from './Button';
+import Going from './Going';
+
 
 export default props => {
-  const start = useSelector(appState => appState.start)
-  
+  const user = useSelector(appState => appState.user)
+  const goingusers = useSelector(appState => appState.going)
+  const notgoingusers = useSelector(appState => appState.notgoing)
+
+  function setNotGoing() {
+    addNotGoing(user.id)
+  }
+
+  function setGoing() {
+    addGoing(user.id)
+  }
+
+  console.log('going',goingusers)
+  console.log('notgoing',notgoingusers)
 
 
   return (
@@ -16,21 +30,22 @@ export default props => {
    
     <div className="maincontainer">
 
-    <Button/>   
-      
-    {start != 0 ? start.results.map(invitee => (
-      console.log(start),
-      <div className="invitee" key={Math.random(100)}>
-        <p><img className="img" src={invitee.picture.large} alt="invitee"/></p>
-        <p>{invitee.name.first} {invitee.name.last}</p>
-        <p>{invitee.phone}</p>
-        <p>{invitee.email}</p>
-        <div className="buttons">
-        <button className="button" onClick={e => addNotGoing(invitee)} type="submit">not going</button>
-        <button className="button" onClick={e => addGoing(invitee)} type="submit">Going</button>
-        </div>
-        </div>
-    )) : ''}
+    <Button/>  
+    <p className="gng">Going: {goingusers.length}</p>
+    <p className="gng">NotGoing: {notgoingusers.length}</p> 
+  
+    
+    <div className="invitee">
+    
+    <img src={user.image} className="img" />
+    <p><b>Name:</b> {user.fname} {user.lname}</p>
+    <p><b>Phone:</b> {user.phone}</p>
+    <p><b>Email:</b> {user.email}</p>
+    <div className="buttons">
+    <button className="button" onClick={e => setNotGoing(user)} type="submit">not going</button>
+    <button className="button" onClick={e => setGoing(user)} type="submit">Going</button>
+    </div>
+    </div>    
 
     <div className="linkbutton">
 
